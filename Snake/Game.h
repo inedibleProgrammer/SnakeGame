@@ -19,6 +19,7 @@ class Game
         void Begin();
     private:
         Snake snake;
+        Food food;
         bool end_of_game;
         Board board;
 };

@@ -2,7 +2,7 @@
 
 
 Board::Board(std::string fileName)
-    :food(), board(), fileName(fileName)
+    : board(), fileName(fileName)
 {
 
 }
@@ -25,19 +25,26 @@ void Board::Begin()
 
 void Board::Draw() const
 {
+    for (int i = 0; i < board.size(); i++)
+    {
+        printf("%s", board[i].c_str());
+        printf("\n");
+    }
+#if 0
     for (unsigned int i = 0; i < board.size(); i++)
     {
         std::cout << board[i] << "\n";
     }
+#endif
 }
 
-void Board::DrawSnake(const Snake& snake)
+void Board::DrawSnake(const Snake& snake, const Food& food)
 {
-    board[snake.GetHeadX()][snake.GetHeadY()] = 'O';
-    for (unsigned int i = 0; i < board.size(); i++)
-    {
-        std::cout << board[i] << "\n";
-    }
+    system("CLS");
+    board[food.GetY()][food.GetX()] = food.GetFood();
+    board[snake.GetHeadY()][snake.GetHeadX()] = 'O';
+
+    this->Draw();
 }
 
 void Board::Clear()

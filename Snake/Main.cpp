@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include <array>
+
+#include <stdio.h>
+
 #include "Game.h"
 
 int main()
@@ -21,6 +24,11 @@ int main()
     strings[1][3] = 'O';
 
     std::cout << strings[1];
+#endif
+
+#if 0
+    std::string string1("Test");
+    printf("%s", string1.c_str());
 #endif
 
 

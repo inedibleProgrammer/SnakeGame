@@ -14,13 +14,37 @@ Game::Game(std::string fileName)
 void Game::PlayerInput()
 {
     char playerInput;
-    playerInput = _getch();
+    playerInput = _getch(); // freeze here
 
     switch (playerInput)
     {
         case 'W':
         case 'w':
-            
+            if (this->snake.GetHeadY() > 1)
+            {
+                this->snake.SetHeadY(snake.GetHeadY() - 1);
+            }
+            break;
+        case 'A':
+        case 'a':
+            if (this->snake.GetHeadX() > 1)
+            {
+                this->snake.SetHeadX(snake.GetHeadX() - 1);
+            }
+            break;
+        case 'S':
+        case 's':
+            if (this->snake.GetHeadY() < Board::boardSize - 2)
+            {
+                this->snake.SetHeadY(snake.GetHeadY() + 1);
+            }
+            break;
+        case 'D':
+        case 'd':
+            if (this->snake.GetHeadX() < Board::boardSize - 2)
+            {
+                this->snake.SetHeadX(snake.GetHeadX() + 1);
+            }
             break;
     }
 }
@@ -29,17 +53,15 @@ void Game::Begin()
 {
     while (!(this->end_of_game))
     {
-
-
         this->board.Begin();
-        this->board.Draw();
-        
+        this->board.DrawSnake(this->snake, this->food);
+        this->PlayerInput();
 
 
 
 
 
 
-        this->end_of_game = true;
+        // this->end_of_game = true;
     }
 }
