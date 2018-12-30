@@ -1,5 +1,5 @@
 
-
+#include <Windows.h>
 #include "Game.h"
 
 
@@ -15,9 +15,10 @@ void Game::PlayerInput()
 {
     char playerInput;
     playerInput = _getch(); // freeze here
-
-    switch (playerInput)
+    if (_kbhit())
     {
+        switch (playerInput)
+        {
         case 'W':
         case 'w':
             if (this->snake.GetHeadY() > 1)
@@ -46,7 +47,9 @@ void Game::PlayerInput()
                 this->snake.SetHeadX(snake.GetHeadX() + 1);
             }
             break;
+        }
     }
+
 }
 
 void Game::Begin()
@@ -56,6 +59,7 @@ void Game::Begin()
         this->board.Begin();
         this->board.DrawSnake(this->snake, this->food);
         this->PlayerInput();
+        Sleep(10);
 
 
 

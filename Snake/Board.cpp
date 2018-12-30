@@ -25,11 +25,13 @@ void Board::Begin()
 
 void Board::Draw() const
 {
+#if 1
     for (int i = 0; i < board.size(); i++)
     {
         printf("%s", board[i].c_str());
         printf("\n");
     }
+#endif
 #if 0
     for (unsigned int i = 0; i < board.size(); i++)
     {
