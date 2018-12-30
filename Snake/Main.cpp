@@ -13,7 +13,7 @@ int main()
 {
     //std::cout << "Test";
 
-#if 0
+#if 1
     Game game("board.txt");
     game.Begin();
 #endif
@@ -34,7 +34,7 @@ int main()
     printf("%s", string1.c_str());
 #endif
 
-#if 1
+#if 0
     int nScreenWidth = 80;
     int nScreenHeight = 30;
     int nFieldWidth = 12;

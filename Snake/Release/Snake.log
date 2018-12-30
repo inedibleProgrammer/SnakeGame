@@ -1,0 +1,9 @@
+﻿  Board.cpp
+c:\users\johnb\documents\programming\cppprojects\snake\snake\board.cpp(29): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+  Main.cpp
+  Snake.cpp
+  Generating code
+  All 201 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Snake.vcxproj -> C:\Users\JohnB\Documents\Programming\CPPProjects\Snake\Release\Snake.exe
